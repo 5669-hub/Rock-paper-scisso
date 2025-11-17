@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Rock Paper Scissor</title>
+</head>
+
+<body>
+
+  <div class="intro">
+    <img src="images/rokps.png" alt="Intro Image">
+    <h1 class="intro-text">Welcome!</h1>
+    <button id="startBtn">Enter Site</button>
+
+    <audio id="introSound" 
+       src="sound/mixkit-movie-whoosh-impact-presentation-2903.wav"
+      
+       preload="auto">
+</audio>
+
+  </div>
+  <div class="username-box">
+    <input type="text" id="username" placeholder="Enter your name">
+    <button id="saveNameBtn"><img src="images/check.png" alt="check"></button>
+  </div>
+  
+  <div class="main">
+    <h1>Rock Paper Scissors</h1>
+
+    <div class="choices">
+      <button class="choice" id="rock">🪨 Rock</button>
+      <button class="choice" id="paper">📄 Paper</button>
+      <button class="choice" id="scissors">✂️ Scissors</button>
+    </div>
+
+    <div class="result">
+      <p>You chose: <span id="player-choice">-</span></p>
+      <p>Computer chose: <span id="computer-choice">-</span></p>
+      <h2 id="winner">Who wins?</h2>
+    </div>
+
+    <div class="score">
+      <p><span id="player-label">You chose:</span> 
+        <span id="player-score">0</span>
+      </p>
+      <p>Computer: <span id="computer-score">0</span></p>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
