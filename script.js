@@ -8,11 +8,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const saveNameBtn = document.getElementById('saveNameBtn');
   const usernameInput = document.getElementById('username');
   const playerLabel = document.getElementById('player-label');
+  const restartbtn = document.querySelector('.restart');
+  let username = "";
 
-  let username = ""; // default empty
-
-
-  // 🎵 Play sound ONLY when button is clicked
   startBtn.addEventListener('click', () => {
     introSound.play().catch(err => console.log("Error playing sound:", err));
 
@@ -31,9 +29,9 @@ window.addEventListener('DOMContentLoaded', () => {
     username = usernameInput.value.trim();
 
     if (username === "") {
-      playerLabel.textContent = "You chose:";
+      playerLabel.textContent = "You:";
     } else {
-      playerLabel.textContent = `${username} chose:`;
+      playerLabel.textContent = `${username} :`;
     }
   });
 
@@ -75,7 +73,24 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+  restartbtn.addEventListener('click', () => {
+    playerScore = 0;
+    computerScore = 0;
+  
+    playerScoreDisplay.textContent = 0;
+    computerScoreDisplay.textContent = 0;
+  
+    playerChoiceDisplay.textContent = "-";
+    computerChoiceDisplay.textContent = "-";
+    winnerDisplay.textContent = "Game restarted!";
 
+    if (username === "") {
+      playerLabel.textContent = "You :";
+    } else {
+      playerLabel.textContent = `${username} :`;
+    }
+  });
+  
   function getComputerChoice() {
     const options = ['rock', 'paper', 'scissors'];
     return options[Math.floor(Math.random() * 3)];

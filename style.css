@@ -1,104 +1,142 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    
-      /* The gradient and the image are layered together */
-      background: 
-        linear-gradient(rgba(233, 151, 11, 0.5), rgba(0, 0, 0, 0.5)), /* dark transparent overlay */
-        url('images/background1.jfif'); /* your image */
-      
-      background-size: cover;      /* Make sure the image covers the screen */
-      background-position: center; /* Center the image */
-      background-repeat: no-repeat;
-      height: 100vh;               /* Full screen height */
-      margin: 0;
-      color: white;                /* Text will look better on dark background */
- 
-    
-  }/* Make the intro cover the full screen */
-  .intro {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 10;
-  }
-  #startBtn {
-    padding: 10px 20px;
-    font-size: 20px;
-    border: none;
-    border-radius: 8px;
-    background: orange;
-    color: black;
-    cursor: pointer;
-    z-index: 3;
-  }
-  
-  .intro img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    animation: zoomFade 4s ease-in-out forwards;
-    position: absolute;
-  }
- 
-  .intro-text {
-    position: relative;
-    color: white;
-    font-size: 2.5em;
-    z-index: 2;
-    opacity: 0;
-    animation: fadeInText 2s ease-in 1.5s forwards;
-  }
-  
-  /* Main content hidden initially */
-  .main {
-    display: none;
-    padding: 50px;
-    text-align: center;
-  }
-  
-  /* Animations */
-  @keyframes zoomFade {
-    0% { transform: scale(1); opacity: 1; }
-    80% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(1.15); opacity: 0.4; }
-  }
-  
-  @keyframes fadeInText {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  input[type="text"] {
-    padding: 5px;
-    font-size: 1rem;
-  }
-  input {
-    border-radius: 5px;
-    background-color: antiquewhite;
-    
-  }
-  #saveNameBtn {
-    margin-left: 10px;
-    padding: 0.3px 2px;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    cursor: pointer;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-  .result, .score {
-    margin-top: 20px;
-    font-size: 1.2rem;
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(rgba(233, 151, 11, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/background1.jfif");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin: 0;
+  color: white;
+}
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 10;
+}
+#startBtn {
+  padding: 10px 20px;
+  font-size: 20px;
+  border: none;
+  border-radius: 8px;
+  background: orange;
+  color: black;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.intro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoomFade 4s ease-in-out forwards;
+  position: absolute;
+}
+
+.intro-text {
+  position: relative;
+  color: white;
+  font-size: 2.5em;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInText 2s ease-in 1.5s forwards;
+}
+
+.main {
+  display: none; /* Initially hidden*/
+  padding: 50px;
+  text-align: center;
+}
+
+@keyframes zoomFade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
   }
-  
+  80% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+input[type="text"] {
+  padding: 5px;
+  font-size: 1rem;
+}
+input {
+  border-radius: 5px;
+  background-color: antiquewhite;
+}
+#saveNameBtn {
+  margin-left: 10px;
+  padding: 0.3px 2px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.choice {
+  background-color: rgb(204, 170, 106);
+  height: 180px;
+  width: 170px;
+}
+.img {
+  margin-top: 20px;
+  height: 100px;
+  width: 110px;
+}
+.img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+.result,
+.score {
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+.restart {
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  width: 200px;
+  cursor: pointer;
+  background-color: rgb(214, 186, 157);
+  border-radius: 8px;
+}
+.restart:hover {
+  background-color: rgb(153, 176, 118);
+  color: white;
+}
